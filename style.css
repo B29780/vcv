@@ -1,0 +1,1262 @@
+/* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Source+Code+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PROFESSIONAL DIGITAL BACKGROUND - OPTIMIZED VERSION */
+body {
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  min-height: 100vh;
+  color: #f5f5f5;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Digital Network Background - Simplified for performance */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Network Nodes */
+  background-image: radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.4) 3px, transparent 3px),
+    radial-gradient(circle at 85% 15%, rgba(6, 182, 212, 0.4) 2px, transparent 2px),
+    radial-gradient(circle at 25% 75%, rgba(14, 165, 233, 0.4) 3px, transparent 3px),
+    radial-gradient(circle at 75% 85%, rgba(34, 211, 238, 0.4) 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.4) 3px, transparent 3px), /* Connection Lines */
+    linear-gradient(45deg, transparent 49%, rgba(59, 130, 246, 0.1) 50%, transparent 51%),
+    linear-gradient(-45deg, transparent 49%, rgba(6, 182, 212, 0.08) 50%, transparent 51%);
+  background-size: 300px 300px, 250px 250px, 280px 280px, 220px 220px, 200px 200px, 400px 400px, 350px 350px;
+  z-index: -3;
+  animation: network-pulse 15s ease-in-out infinite;
+}
+
+@keyframes network-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+/* Data Flow Animation - Simplified */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Flowing Data */
+  background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(59, 130, 246, 0.2) 25%,
+      transparent 50%,
+      rgba(6, 182, 212, 0.2) 75%,
+      transparent 100%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      rgba(14, 165, 233, 0.15) 25%,
+      transparent 50%,
+      rgba(34, 211, 238, 0.15) 75%,
+      transparent 100%
+    );
+  background-size: 400px 100px, 350px 150px;
+  z-index: -2;
+  animation: data-flow 12s linear infinite;
+}
+
+@keyframes data-flow {
+  0% {
+    background-position: -400px 0, -350px 0;
+  }
+  100% {
+    background-position: 100vw 0, 100vw 0;
+  }
+}
+
+/* Circuit Board Pattern - Simplified */
+html {
+  scroll-behavior: smooth;
+  /* Circuit Traces */
+  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 25px 25px, 25px 25px;
+}
+
+p {
+  color: #d1c7d8;
+  line-height: 1.6;
+}
+
+/* TRANSITION */
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+nav,
+.nav-links {
+  display: flex;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(59, 130, 246, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+a {
+  color: #f5f5f5;
+  text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: #3b82f6;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Fira Code", monospace;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.logo::before {
+  content: "<dev>";
+  position: absolute;
+  left: -3rem;
+  color: #06b6d4;
+  font-size: 1rem;
+  animation: soft-glow 3s ease-in-out infinite;
+}
+
+.logo::after {
+  content: "</dev>";
+  position: absolute;
+  right: -3.5rem;
+  color: #0ea5e9;
+  font-size: 1rem;
+  animation: soft-glow 3s ease-in-out infinite reverse;
+}
+
+@keyframes soft-glow {
+  0%,
+  100% {
+    opacity: 0.8;
+    text-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
+  }
+}
+
+.logo:hover {
+  cursor: default;
+  animation: gentle-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes gentle-shimmer {
+  0% {
+    filter: hue-rotate(0deg) drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: hue-rotate(15deg) drop-shadow(0 0 12px rgba(6, 182, 212, 0.4));
+  }
+  100% {
+    filter: hue-rotate(0deg) drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+  }
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+  display: none;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(59, 130, 246, 0.1);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+  transition: all 0.3s ease-in-out;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(20px);
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.menu-links a {
+  display: block;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+.menu-links a:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+/* SECTIONS */
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+  position: relative;
+}
+
+.section-container {
+  display: flex;
+  gap: 4rem;
+  height: 80%;
+  align-items: center;
+}
+
+/* PROFILE SECTION */
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+  align-items: center;
+  position: relative;
+}
+
+#profile::before {
+  content: "{ coding: true, creativity: 'unlimited', passion: 'web development' }";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  color: rgba(59, 130, 246, 0.08);
+  animation: gentle-code-float 18s ease-in-out infinite;
+}
+
+#profile::after {
+  content: "const developer = new WebDeveloper('Buyelwa');";
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+  color: rgba(6, 182, 212, 0.08);
+  animation: gentle-code-float 22s ease-in-out infinite reverse;
+}
+
+@keyframes gentle-code-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.08;
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+    opacity: 0.15;
+  }
+}
+
+.section-pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+  position: relative;
+}
+
+/* Changed Profile Picture Animation - Now Floating Instead of Spinning */
+.section-pic-container::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  background: conic-gradient(from 0deg, #3b82f6, #06b6d4, #0ea5e9, #22d3ee, #3b82f6);
+  border-radius: 50%;
+  z-index: -1;
+  animation: profile-float 6s ease-in-out infinite;
+}
+
+@keyframes profile-float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+    opacity: 1;
+  }
+}
+
+.section-pic-container::after {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  right: -25px;
+  bottom: -25px;
+  background: conic-gradient(
+    from 180deg,
+    transparent,
+    rgba(59, 130, 246, 0.1),
+    transparent,
+    rgba(6, 182, 212, 0.08),
+    transparent
+  );
+  border-radius: 50%;
+  z-index: -2;
+  animation: profile-pulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes profile-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2), 0 0 30px rgba(6, 182, 212, 0.15), 0 0 45px rgba(14, 165, 233, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  animation: pic-gentle-float 4s ease-in-out infinite;
+}
+
+@keyframes pic-gentle-float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) translateY(-8px);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(6, 182, 212, 0.2), 0 0 60px rgba(14, 165, 233, 0.15);
+}
+
+.section-text {
+  align-self: center;
+  text-align: center;
+}
+
+.section-text-p1 {
+  font-weight: 600;
+  text-align: center;
+  color: #06b6d4;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: "Fira Code", monospace;
+}
+
+.section-text-p1::before {
+  content: "// ";
+  color: #0ea5e9;
+}
+
+.section-text-p2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #f5f5f5;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  background: linear-gradient(45deg, #3b82f6, #06b6d4, #0ea5e9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Fira Code", monospace;
+  position: relative;
+  animation: soft-title-glow 5s ease-in-out infinite;
+}
+
+@keyframes soft-title-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(6, 182, 212, 0.3));
+  }
+}
+
+.title::after {
+  content: "_";
+  animation: cursor-blink 1s infinite;
+  color: #06b6d4;
+}
+
+@keyframes cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* SOCIAL ICONS */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.social-icon:hover::before {
+  left: 100%;
+}
+
+.linkedin-icon {
+  background: linear-gradient(45deg, #0077b5, #0099d4);
+}
+
+.linkedin-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 119, 181, 0.4);
+}
+
+.github-icon {
+  background: linear-gradient(45deg, #333, #555);
+}
+
+.github-icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(51, 51, 51, 0.4);
+}
+
+/* ICONS */
+.icon {
+  cursor: pointer;
+  height: 2rem;
+  transition: all 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* BUTTONS */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-color-1 {
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  color: white;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.btn-color-1:hover {
+  background: linear-gradient(45deg, #06b6d4, #3b82f6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+.btn-color-2 {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background: transparent;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.15);
+}
+
+.btn-color-2:hover {
+  background: linear-gradient(45deg, #3b82f6, #06b6d4);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+}
+
+/* ABOUT SECTION */
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+}
+
+.details-container {
+  padding: 2rem;
+  flex: 1;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.details-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #0ea5e9);
+  animation: gentle-shimmer-flow 4s ease-in-out infinite;
+}
+
+@keyframes gentle-shimmer-flow {
+  0%,
+  100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.details-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.details-container h3 {
+  color: #f5f5f5;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  font-family: "Fira Code", monospace;
+}
+
+/* EXPERIENCE SECTION */
+#experience {
+  position: relative;
+}
+
+.experience-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.experience-description {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  font-weight: 500;
+  position: relative;
+}
+
+.experience-description::before {
+  content: "console.log('";
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  color: #0ea5e9;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.experience-description::after {
+  content: "');";
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  color: #0ea5e9;
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+}
+
+.experience-sub-title {
+  color: #f5f5f5;
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: "Fira Code", monospace;
+}
+
+.experience-sub-title::before {
+  content: "{ ";
+  color: #06b6d4;
+}
+
+.experience-sub-title::after {
+  content: " }";
+  color: #06b6d4;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* BULLET POINT SKILLS STYLING */
+.skills-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skills-content {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #0ea5e9, #22d3ee, #3b82f6);
+  animation: soft-rainbow-flow 6s ease-in-out infinite;
+}
+
+@keyframes soft-rainbow-flow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.skills-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.skills-list li {
+  position: relative;
+  padding: 1.2rem 0 1.2rem 3rem;
+  color: #f5f5f5;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  font-family: "Inter", sans-serif;
+}
+
+.skills-list li:last-child {
+  border-bottom: none;
+}
+
+.skills-list li:hover {
+  background: rgba(59, 130, 246, 0.08);
+  padding-left: 3.5rem;
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+  border-left: 3px solid #06b6d4;
+}
+
+.skills-list li::before {
+  content: ">";
+  position: absolute;
+  left: 1.5rem;
+  top: 1.2rem;
+  color: #06b6d4;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Fira Code", monospace;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+}
+
+.skills-list li:hover::before {
+  color: #3b82f6;
+  transform: scale(1.3);
+  left: 1.8rem;
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+/* RESPONSIVE DESIGN FOR SKILLS */
+@media screen and (max-width: 768px) {
+  .skills-content {
+    padding: 2rem;
+  }
+
+  .skills-list {
+    gap: 0.8rem;
+  }
+
+  .skills-list li {
+    font-size: 1.05rem;
+    padding: 1rem 0 1rem 2.5rem;
+  }
+
+  .skills-list li:hover {
+    padding-left: 3rem;
+    transform: translateX(5px);
+  }
+
+  .skills-list li::before {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  .skills-list li:hover::before {
+    left: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-content {
+    padding: 1.5rem;
+  }
+
+  .skills-list li {
+    font-size: 1rem;
+    padding: 0.9rem 0 0.9rem 2rem;
+    line-height: 1.6;
+  }
+
+  .skills-list li:hover {
+    padding-left: 2.5rem;
+    transform: translateX(3px);
+  }
+
+  .skills-list li::before {
+    left: 0.8rem;
+    top: 0.9rem;
+    font-size: 1.3rem;
+  }
+
+  .skills-list li:hover::before {
+    left: 1rem;
+  }
+}
+
+/* PROJECTS SECTION */
+#projects {
+  position: relative;
+}
+
+.projects-description {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.project-note {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  color: #f5f5f5;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  position: relative;
+}
+
+.project-note::before {
+  content: "/* Future Projects */";
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  color: #0ea5e9;
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+}
+
+/* CONTACT */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(15, 23, 42, 0.9);
+  margin: 2rem auto;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.1);
+  gap: 2rem;
+  position: relative;
+}
+
+.contact-info-upper-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4, #0ea5e9);
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.contact-info-container:hover {
+  background: rgba(59, 130, 246, 0.05);
+  transform: translateY(-2px);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+.contact-info-container p {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Fira Code", monospace;
+}
+
+.contact-info-container a {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+.contact-info-container a:hover {
+  color: #06b6d4;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
+/* FOOTER SECTION */
+footer {
+  height: 26vh;
+  margin: 0 1rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border-radius: 25px 25px 0 0;
+  color: #f5f5f5;
+  border-top: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+footer nav {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+footer .nav-links {
+  justify-content: center;
+}
+
+footer .nav-links a {
+  color: #d1c7d8;
+  font-family: "Fira Code", monospace;
+}
+
+footer .nav-links a:hover {
+  color: #06b6d4;
+  text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
+footer .nav-links a::after {
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
+}
+
+/* TEXT CONTAINER */
+.text-container {
+  color: #d1c7d8;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  margin-top: 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* SECTION TITLES */
+.section-text-p1 {
+  font-family: "Fira Code", monospace;
+  color: #06b6d4;
+}
+
+.title {
+  font-family: "Fira Code", monospace;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 1400px) {
+  #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+  }
+  .about-containers {
+    flex-wrap: wrap;
+  }
+  #contact,
+  #projects {
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+  #experience,
+  .experience-details-container {
+    margin-top: 2rem;
+  }
+  #profile,
+  .section-container {
+    display: block;
+  }
+  section,
+  .section-container {
+    height: fit-content;
+  }
+  section {
+    margin: 0 5%;
+  }
+  .section-pic-container {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+  }
+  .about-containers {
+    margin-top: 0;
+  }
+  .profile-pic {
+    width: 275px;
+    height: 275px;
+  }
+  .about-details-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #contact,
+  footer {
+    height: 40vh;
+  }
+  #profile {
+    height: 83vh;
+    margin-bottom: 0;
+  }
+  article {
+    font-size: 1rem;
+  }
+  footer nav {
+    height: fit-content;
+    margin-bottom: 2rem;
+  }
+  .about-containers,
+  .contact-info-upper-container,
+  .btn-container {
+    flex-wrap: wrap;
+  }
+  .contact-info-container {
+    margin: 0;
+  }
+  .contact-info-container p,
+  .nav-links li a {
+    font-size: 1rem;
+  }
+  .experience-sub-title {
+    font-size: 1.25rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .section-pic-container {
+    width: auto;
+    height: 46vw;
+    justify-content: center;
+  }
+  .section-text-p2 {
+    font-size: 1.25rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .text-container {
+    text-align: justify;
+    padding: 1.5rem;
+  }
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto 2rem;
+  }
+  .contact-info-upper-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .section-text-p2 {
+    font-size: 1.1rem;
+  }
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+  }
+  section {
+    margin: 0 2%;
+  }
+  .details-container {
+    padding: 1.5rem;
+  }
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
